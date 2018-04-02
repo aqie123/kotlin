@@ -1,13 +1,19 @@
 package net.print.kotlin
 
 fun main(args: Array<String>) {
-    sayHello()
+    //sayHello()
+    test()
 }
+// 基本数据类型
 fun sayHello(): Unit{
     println("hello World")
     // 布尔
     val aBoolean: Boolean = true
     val anotherBoolean:Boolean = false
+
+    // 短整型
+    val maxShort:Short = Short.MAX_VALUE
+    val minShort:Short = Short.MIN_VALUE
 
     // 整型
     val aInt: Int = 8
@@ -30,6 +36,9 @@ fun sayHello(): Unit{
     val maxDouble:Double = Double.MAX_VALUE
     val minDouble:Double = Double.MIN_VALUE     // 最小的正数
 
+    // byte
+    val aByte:Byte = 127        // 一位 8字节 应该表示 2^8 = -128-127   256
+
 
     println(bInt)
     println(cInt)
@@ -51,4 +60,42 @@ fun sayHello(): Unit{
 
     println(maxDouble)
     println(minDouble)
+
+    println(maxShort)
+    println(minShort)
 }
+
+// 拆箱和装箱 devan encasement bin  字符串
+fun test():Unit{
+    val aChar:Char = 'a'
+    val bChar:Char = '\u000f'
+
+    val aString:String = "hello"
+    // 字符数组构造字符串
+    var bString:String = String(charArrayOf('h','e','l','l','o'))
+
+    println(bChar)
+    println(aString)
+    println(bString)
+    println(aString == bString)     // true   equals
+    println(aString === bString)     // false 比较地址
+    print("hello"+"world")
+
+    var aInt:Int = 1
+    var bInt:Int = 2
+    println("$aInt + $bInt = ${aInt + bInt}")
+
+    println("hello \"aqie\" \$648")
+
+    var rawString:String = """
+        \t
+        \n
+     """
+    println(rawString)
+    println(rawString.length)
+
+
+}
+
+// 类与对象
+fun test2()
