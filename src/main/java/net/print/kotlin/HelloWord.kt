@@ -2,7 +2,9 @@ package net.print.kotlin
 
 fun main(args: Array<String>) {
     //sayHello()
-    test()
+    //test()
+    //test2()
+    test3()
 }
 // 基本数据类型
 fun sayHello(): Unit{
@@ -98,4 +100,32 @@ fun test():Unit{
 }
 
 // 类与对象
-fun test2()
+fun test2():Unit{
+    var 我喜欢的妹子:妹子 = 妹子("温柔","甜美","嘤嘤嘤")
+    print(我喜欢的妹子 is 人)
+}
+
+open class 人(var 性格:String,var 长相:String,var 声音:String){
+    init {
+        print("${this.javaClass.simpleName}：性格 $性格,长相 $长相,声音, $声音")
+    }
+}
+
+class 妹子(性格:String,长相:String,声音:String):人(性格,长相,声音)
+
+class 帅哥(性格:String,长相:String,声音:String):人(性格,长相,声音)
+
+
+fun test3():Unit{
+    var name = getName()?:return        // 如果name 为null 返回
+    print(getName()?.length)
+
+    var value:String ?= "abcd"          // 这里定义可能出现null
+    print(value!!.length)               // 肯定不是null,可以打印
+}
+fun getName():String?{
+    return null
+}
+
+
+
