@@ -127,5 +127,31 @@ fun getName():String?{
     return null
 }
 
+// range
+fun test4():Unit{
+    val range IntRange = 0..10  // [0,10]
+    val range2 IntRange = 0 until 10 // [0,10)
+    val emptyRange IntRange = 0..-1
+
+    println(emptyRange is Empty())
+    println(range.contains(50))
+    println(50 in range)
+
+    for(i in range_exclusive){
+        print("$i,")
+    }
+}
+
+// array
+fun test5():Unit{
+    val arratOf IntArray = intArrayOf(1,2,3,4)
+    val arrayChar CharArray = charArray('a','b')
+    val arrayString Array<String> = arrayOf("hello","world")
+
+}
+
+
+
+
 
 
